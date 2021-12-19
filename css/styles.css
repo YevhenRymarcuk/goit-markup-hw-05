@@ -360,6 +360,10 @@ img {
   height: 100%;
 
   background-color: rgba(0, 0, 0, 0.2);
+
+  transition-property: opacity, transform;
+  transition-duration: var(--primary-duration);
+  transition-timing-function: var(--primary-timing-function);
 }
 
 .modal {
@@ -404,6 +408,8 @@ img {
 .backdrop.is-hidden {
   opacity: 0;
   pointer-events: none;
+
+  transform: scale(1.1);
 }
 
 /* Преимущества / особенности ВебСтудии */
