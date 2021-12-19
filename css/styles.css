@@ -27,6 +27,12 @@
 Первичный цвет акцента текста: #2196F3
 Первичный цвет акцента элемента: #2196F3
 Вторичный цвет акцента элемента: #ffffff
+
+--------Время перехода/анимации-----
+Первичное время перехода/анимации: 250ms
+
+--------Функция распределения времени анимации-----
+Первичная функция распределения времени: cubic-bezier(0.4, 0, 0.2, 1)
 */
 
 :root {
@@ -53,6 +59,12 @@
 
   /* Переменная зазоров в сетках элементов */
   --flexbox-items-gap: 30px;
+
+  /* Время перехода/анимации */
+  --primary-duration: 250ms;
+
+  /* Функция распределения времени анимации */
+  --primary-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -155,6 +167,10 @@ img {
   margin-right: 93px;
   padding-top: 24px;
   padding-bottom: 25px;
+
+  transition-property: color;
+  transition-duration: var(--primary-duration);
+  transition-timing-function: var(--primary-timing-function);
 }
 
 .accent-logo {
@@ -190,6 +206,10 @@ img {
 
   color: var(--title-text-color);
   text-decoration: none;
+
+  transition-property: color;
+  transition-duration: var(--primary-duration);
+  transition-timing-function: var(--primary-timing-function);
 }
 
 .nav-link::after {
@@ -245,6 +265,10 @@ img {
   align-items: center;
 
   padding: 32px 0;
+
+  transition-property: color;
+  transition-duration: var(--primary-duration);
+  transition-timing-function: var(--primary-timing-function);
 }
 
 .contact-mail:hover,
@@ -454,10 +478,18 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  transition-property: background-color;
+  transition-duration: var(--primary-duration);
+  transition-timing-function: var(--primary-timing-function);
 }
 
 .social-network-icon {
   fill: var(--primary-icon-color);
+
+  transition-property: fill;
+  transition-duration: var(--primary-duration);
+  transition-timing-function: var(--primary-timing-function);
 }
 
 .social-network-link:focus .social-network-icon-box,
@@ -497,10 +529,18 @@ img {
 
   border: 1px solid var(--primary-icon-color);
   border-radius: 4px;
+
+  transition-property: border-color;
+  transition-duration: var(--primary-duration);
+  transition-timing-function: var(--primary-timing-function);
 }
 
 .clients-icon {
   fill: var(--primary-icon-color);
+
+  transition-property: fill;
+  transition-duration: var(--primary-duration);
+  transition-timing-function: var(--primary-timing-function);
 }
 
 .clients-link:focus .clients-icon-box,
@@ -615,6 +655,10 @@ address {
   line-height: 1.62;
   text-align: center;
   letter-spacing: 0.03em;
+
+  transition-property: color, background-color, box-shadow;
+  transition-duration: var(--primary-duration);
+  transition-timing-function: var(--primary-timing-function);
 }
 
 .btn:hover,
@@ -653,6 +697,12 @@ address {
 
 .works-item-link {
   text-decoration: none;
+}
+
+.works-item-link-box {
+  transition-property: box-shadow;
+  transition-duration: var(--primary-duration);
+  transition-timing-function: var(--primary-timing-function);
 }
 
 .works-item-link:hover .works-item-link-box,
