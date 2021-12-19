@@ -805,6 +805,48 @@ address {
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
+.works-items-thumb {
+  position: relative;
+
+  overflow: hidden;
+}
+
+.works-items-overlay {
+  position: absolute;
+
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(33, 150, 243, 0.9);
+
+  transform: translateY(0);
+
+  transition-property: transform;
+  transition-duration: var(--primary-duration);
+  transition-timing-function: var(--primary-timing-function);
+}
+
+.works-item-link:hover .works-items-overlay,
+.works-item-link:focus .works-items-overlay {
+  transform: translateY(-100%);
+}
+
+.overlays-text {
+  padding: 0 24px;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+
+  color: var(--secondary-text-color);
+}
+
 .works-list .item-title {
   font-weight: bold;
   font-size: 18px;
