@@ -18,6 +18,11 @@
 Первичный цвет иконок: #AFB1B8
 Вторичный цвет иконок: #ffffff
 
+--------Цвет фона иконок------
+Первичный цвет фона иконок: #ffffff
+Вторичный цвет фона иконок: #ffffff
+
+
 --------Цвет акцента-----
 Первичный цвет акцента текста: #2196F3
 Первичный цвет акцента элемента: #2196F3
@@ -38,6 +43,9 @@
 
   --primary-icon-color: #afb1b8;
   --secondary-icon-color: #ffffff;
+
+  --primary-bg-color-icon: #ffffff;
+  --secondary-bg-color-icon: rgba(255, 255, 255, 0.1);
 
   --primary-text-accent-color: #2196f3;
   --primary-element-accent-color: #2196f3;
@@ -174,16 +182,37 @@ img {
 }
 
 .nav-link {
-  color: var(--title-text-color);
-  text-decoration: none;
-
   display: inline-block;
 
+  position: relative;
+
   padding: 32px 0;
+
+  color: var(--title-text-color);
+  text-decoration: none;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+
+  background-color: var(--primary-element-accent-color);
+
+  opacity: 0;
 }
 
 .nav-list .nav-link.current {
   color: var(--primary-text-accent-color);
+}
+
+.nav-link.current.nav-link::after {
+  opacity: 1;
 }
 
 .nav-link:hover,
@@ -431,13 +460,13 @@ img {
   fill: var(--primary-icon-color);
 }
 
-.social-network-icon-box:hover,
-.social-network-icon-box:focus {
+.social-network-link:focus .social-network-icon-box,
+.social-network-link:hover .social-network-icon-box {
   background-color: var(--primary-element-accent-color);
 }
 
-.social-network-icon-box:hover .social-network-icon,
-.social-network-icon-box:focus .social-network-icon {
+.social-network-link:focus .social-network-icon,
+.social-network-link:hover .social-network-icon {
   fill: var(--secondary-element-accent-color);
 }
 
@@ -474,13 +503,13 @@ img {
   fill: var(--primary-icon-color);
 }
 
-.clients-icon-box:focus,
-.clients-icon-box:hover {
+.clients-link:focus .clients-icon-box,
+.clients-link:hover .clients-icon-box {
   border: 1px solid var(--primary-element-accent-color);
 }
 
-.clients-icon-box:focus .clients-icon,
-.clients-icon-box:hover .clients-icon {
+.clients-link:focus .clients-icon,
+.clients-link:hover .clients-icon {
   fill: var(--primary-element-accent-color);
 }
 
@@ -537,6 +566,10 @@ address {
   color: var(--primary-text-accent-color);
 }
 
+.our-social-networks {
+  padding-top: 12px;
+}
+
 .our-social-networks .item-title {
   margin-bottom: 20px;
 
@@ -546,6 +579,14 @@ address {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--secondary-text-color);
+}
+
+.our-social-networks .social-network-icon-box {
+  background-color: var(--secondary-bg-color-icon);
+}
+
+.our-social-networks .social-network-icon {
+  fill: var(--secondary-icon-color);
 }
 
 /* II. Стили страницы "Портфолио" */
@@ -612,6 +653,12 @@ address {
 
 .works-item-link {
   text-decoration: none;
+}
+
+.works-item-link:hover .works-item-link-box,
+.works-item-link:focus .works-item-link-box {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .works-list .item-title {
